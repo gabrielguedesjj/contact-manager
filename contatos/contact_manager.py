@@ -1,19 +1,23 @@
-contatos =[]
 
-def adicionar_contatos(nome, numero, email):
-    contato = {'nome': nome, 'numero':numero, 'email':email}
+contatos = []
+
+def adicionar_contato(nome, telefone, email):
+    contato = {
+        'nome': nome, 'telefone': telefone, 'email': email
+    }
     contatos.append(contato)
-    print(f'Contato {nome} adicionado com sucesso')
+    print(f"Contato {nome} adicionado com sucesso!")
 
-def lista_contatos():
+def listar_contatos():
     if not contatos:
-        print('Nenhum contato na lista')
+        print("Nenhum contato na lista.")
     else:
-        for index, contato in enumerate(contatos):
-            print(f'{index + 1}. {contato['nome']} - {contato['numero']}' - {contato['email']})
+        for indice, contato in enumerate(contatos):
+            print(f"{indice + 1}. {contato['nome']} - {contato['telefone']} - {contato['email']}")
 
-def remove_contato(nome):
+def remover_contato(nome):
     global contatos
-    contatos = [contato for contato in contatos if contato['name'] !=nome ]
-    print(f'Contatos {nome} removido com  sucesso !')   
-             
+    contatos = [contato for contato in contatos if contato['nome'] != nome]
+    print(f"Contato {nome} removido com sucesso!")
+
+
